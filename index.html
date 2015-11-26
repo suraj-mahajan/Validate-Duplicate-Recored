@@ -193,78 +193,17 @@
 
 
         <script src="script/jquery-1.11.3.min.js"></script>
+        <script src="script/DuplicateValidater.js"></script>
+
+
         <script type="text/javascript">
             function Validate()
             {
-                var ValidationGroups = [];
-                $('#GridView1 tr').each(function () {
-                    $(this).find("[validate-group]").each(function () {
-                        ValidationGroups.push($(this).attr('validate-group'));
-                    });
+                $('#GridView1').SM_Duplicate_Validate({
+                    ShowMessage:true,
+                    Message: 'Sample',
+                    Focus: true
                 });
-                ValidationGroups = $.unique(ValidationGroups);
-
-                var isError = false;
-
-                for (var a = 0; a <= ValidationGroups.length; a++) {
-                    console.log(a);
-                    var arr = [];
-                    var i = 0;
-                    $('#GridView1 tr').each(function () {
-                            var CurrentArrayVal = "";
-                            $(this).find('[validate-group="' + ValidationGroups[a] + '"]').each(function () {
-                                var inputVal = $(this).val();
-                                console.log(ValidationGroups[a]);
-                                $(this).css('border', '1px solid gray');
-                                if (inputVal != "") {
-                                    CurrentArrayVal = CurrentArrayVal + "-" + inputVal;
-                                }
-                            });
-                            if ((CurrentArrayVal != "") && (CurrentArrayVal != "0") && CurrentArrayVal != "-0") {
-                                arr.push(CurrentArrayVal);
-                            }
-                            i = i + 1;
-                        });
-
-                        var Duplicates = isDuplicate(arr);
-                        if (Duplicates != "") {
-                            isError = true;
-
-                            for (var i = 0; i < Duplicates.length; i++) {
-                                var Row = Duplicates[i];
-                                var Values = Row.split('-');
-                                for (var b = 0; b < Values.length; b++) {
-                                    $('#GridView1 tr').each(function () {
-                                    $(this).find('[validate-group]').each(function () {
-
-                                        if (($(this).val() != "") && $(this).val() != "0") {
-                                            if ($(this).val() == Values[b]) {
-                                                $(this).css('border', '1px solid red');
-                                            }
-                                        }
-                                    });
-                                });
-                            }
-                        }
-
-                        }
-                    if (isError == true) {
-                        alert('Duplicate Values Found');
-                    }
-                }
-                function isDuplicate(arrInput) {
-                    var results = [];
-                    var sorted_arr = arrInput.sort();
-                    for (var i = 0; i < arrInput.length - 1; i++) {
-                        if (sorted_arr[i + 1] == sorted_arr[i]) {
-                            results.push(sorted_arr[i]);
-                        }
-                    }
-                    return results;
-                }
-                function info(msg) {
-                    console.info(msg);
-                }
 
             }
         </script>
