@@ -2,6 +2,12 @@
 
 <h1>Validate Same Record in Grid/form Plugin </h1>
 <p>
+
+<a href="http://suraj-mahajan.github.io/Validate-Duplicate-Recored/Demo.html" >Check out Working Dome here</a>
+
+</p>
+
+<p>
 Its quite easy to empliment this plugin in your form to validate or prevent user to adding same records within grid or form.   
 
 </p>
