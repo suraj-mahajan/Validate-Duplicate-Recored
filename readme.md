@@ -27,21 +27,10 @@ in this case also user cant enter same mayer name and mobile number, otherwiose 
 </h3>
 
 <h1>Now lets talk about emplementation</h1>
-
-<script src="script/DuplicateValidater.js"></script>
-
-
-        <script type="text/javascript">
-            function Validate()
-            {
-                $('#GridView1').SM_Duplicate_Validate({
-                    ShowMessage:true,
-                    Message: 'Sample',
-                    Focus: true
-                });
-
-            }
-        </script>
-
+<br><br>
+<img src="http://suraj-mahajan.github.io/Validate-Duplicate-Recored/images/05.jpg">
+<br><br>
+Thats'it :)
+<br>
 </p>
 
