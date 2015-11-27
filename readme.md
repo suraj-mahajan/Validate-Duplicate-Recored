@@ -12,7 +12,7 @@ Its quite easy to empliment this plugin in your form to validate or prevent user
 
 </p>
 <p>
-<h2>Stapes</h2>
+<h2>Steps</h2>
 <h3>1. Create your Validation Groups using custom property "validation-group"
 <br><br>
 <img src="http://suraj-mahajan.github.io/Validate-Duplicate-Recored/images/01.jpg">
